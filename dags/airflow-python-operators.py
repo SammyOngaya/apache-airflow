@@ -30,6 +30,6 @@ dummy_operator = DummyOperator(task_id='dummy_task', dag=dag)
 hello_operator = PythonOperator(task_id='hello_task', python_callable=hello_world, dag=dag)
 lorem_operator = PythonOperator(task_id='lorem_task', python_callable=lorem_ipsum, dag=dag)
 
-# step 6 -- run the tasks sequentially
+# step 6 -- run the tasks sequentially from dummy operator to the python operator
 dummy_operator >> hello_operator
 hello_operator >> lorem_operator
