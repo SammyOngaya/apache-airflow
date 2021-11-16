@@ -5,7 +5,6 @@ from airflow.operators.dummy_operator import DummyOperator
 from airflow.operators.python_operator import PythonOperator
 
 # step 2 -- Define your Python functions
-
 def hello_world():
  return ('Hello Wolrd Text')
 
