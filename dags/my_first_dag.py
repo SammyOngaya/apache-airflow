@@ -1,0 +1,25 @@
+# Step 1 Import required libraries
+from airflow import DAG
+from datetime import datetime
+from airflow.operators.dummy_operator import DummyOperator
+
+# Step 2 Define default parameters
+
+default_args={
+    'owner':'Sam',
+    'depends_on_past':False,
+    'start_date': datetime(2021,11,11),
+    'retries':3
+}
+
+# Step 3 Create DAG Object
+dag=DAG(dag_id='My-first-DAG', default_args=default_args, catchup=False, schedule_interval='*/1 * * * *')
+
+# Step 4 Add Tasks to the DAG
+
+start=DummyOperator(task_id='start', dag=dag)
+end=DummyOperator(task_id='end',dag=dag)
+
+# Step 5 Define Dependencies
+start>>end
+
