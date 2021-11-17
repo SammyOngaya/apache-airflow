@@ -9,7 +9,7 @@ from airflow.operators.bash_operator import BashOperator
 default_args={
     'owner':'sam',
     'depends_on_past':False,
-    'start_date': datetime(2020, 12, 26),
+    'start_date': datetime(2021, 10, 10),
     'retries':3
     }
 

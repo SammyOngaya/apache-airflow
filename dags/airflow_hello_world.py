@@ -8,7 +8,7 @@ from airflow.operators.dummy_operator import DummyOperator
 default_args={
     'owner':'airflow',
     'depends_on_past':False,
-    'start_date': datetime.now(),
+    'start_date': datetime(2021,11,11),
     'retries':3
 }
 
